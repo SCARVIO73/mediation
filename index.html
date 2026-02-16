@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn about mediation — a faster, confidential and cost-effective way to resolve disputes in India without going to court.">
+<title>Mediation India — Resolve Disputes Amicably</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a class="nav-brand" onclick="navigateTo('home')">
+      <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="#2563A8" stroke-width="2"/><path d="M10 20 C10 14, 16 10, 16 10 C16 10, 22 14, 22 20" stroke="#2563A8" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="16" cy="12" r="2" fill="#2563A8"/><path d="M12 18h8" stroke="#2563A8" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <span class="nav-brand-text">Mediation India</span>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a onclick="navigateTo('home')">Home</a></li>
+      <li><a onclick="navigateTo('what-is-mediation')">What is Mediation</a></li>
+      <li><a onclick="navigateTo('how-it-works')">How It Works</a></li>
+      <li><a onclick="navigateTo('faqs')">FAQs</a></li>
+      <li><a onclick="navigateTo('resources')">Resources</a></li>
+      <li><a onclick="navigateTo('find-mediator')">Find a Mediator</a></li>
+      <li><a onclick="navigateTo('contact')" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- ═══ PAGE: HOME ═══ -->
+<!-- ═══════════════════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <p class="section-label">Dispute Resolution</p>
+          <h1>Resolve Disputes <em>Amicably</em> Through Mediation</h1>
+          <p>A faster, confidential and cost-effective way to resolve conflicts — without going to court.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" onclick="navigateTo('what-is-mediation')">Understand Mediation <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            <a class="btn btn-outline" onclick="navigateTo('find-mediator')">Find a Mediator</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="video-placeholder" role="img" aria-label="Mediation explainer video placeholder">
+            <div class="play-btn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#2563A8"><polygon points="8,5 20,12 8,19"/></svg>
+            </div>
+            <span class="video-label">Watch: What is Mediation? (45 sec)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Definition -->
+  <section class="section definition">
+    <div class="container">
+      <div class="definition-inner reveal">
+        <p class="section-label">Understanding Mediation</p>
+        <h2 class="section-title">What is Mediation?</h2>
+        <p>Mediation is a voluntary and confidential process where a neutral third person — called a mediator — helps parties resolve disputes through dialogue and mutual agreement.</p>
+        <p>The mediator does not impose a decision. The parties decide the outcome together, keeping control of the resolution in their own hands.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="section" style="background:var(--warm-white)">
+    <div class="container">
+      <div style="text-align:center" class="reveal">
+        <p class="section-label">Advantages</p>
+        <h2 class="section-title">Why Choose Mediation?</h2>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Saves Time</h3>
+          <p>Most disputes are resolved in weeks rather than the years it can take in court proceedings.</p>
+        </div>
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <h3>Saves Cost</h3>
+          <p>Significantly lower expenses compared to lengthy litigation and legal fees.</p>
+        </div>
+        <div class="benefit-card reveal">
+          <div class="benefit-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Preserves Relationships</h3>
+          <p>Encourages respectful communication and helps maintain long-term personal and business relationships.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audience -->
+  <section class="section audience-section">
+    <div class="container">
+      <div style="text-align:center" class="reveal">
+        <p class="section-label">For Everyone</p>
+        <h2 class="section-title">Who is Mediation For?</h2>
+        <p class="section-subtitle" style="margin:0 auto">Mediation can help resolve a wide variety of disputes across personal, professional and business contexts.</p>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-card reveal">
+          <span class="audience-emoji">👨‍👩‍👧</span>
+          <h3>Families</h3>
+          <p>Divorce, property, custody and inheritance disputes</p>
+        </div>
+        <div class="audience-card reveal">
+          <span class="audience-emoji">🏘️</span>
+          <h3>Neighbours</h3>
+          <p>Property boundaries, noise and shared space issues</p>
+        </div>
+        <div class="audience-card reveal">
+          <span class="audience-emoji">🏢</span>
+          <h3>Workplace</h3>
+          <p>Employer–employee conflicts and workplace grievances</p>
+        </div>
+        <div class="audience-card reveal">
+          <span class="audience-emoji">🚀</span>
+          <h3>Startups & Businesses</h3>
+          <p>Founder disputes, partnership and contract disagreements</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center" class="reveal">
+        <p class="section-label">The Process</p>
+        <h2 class="section-title">How Mediation Works</h2>
+        <p class="section-subtitle" style="margin:0 auto">A simple three-step process that puts you in control of the outcome.</p>
+      </div>
+      <div class="steps-track reveal">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <h3>Agree to Mediate</h3>
+          <p>Both parties voluntarily agree to enter the mediation process.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <h3>Talk with a Mediator</h3>
+          <p>A neutral mediator facilitates structured dialogue between the parties.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <h3>Sign Agreement</h3>
+          <p>Reach a mutually acceptable resolution and sign a settlement agreement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="padding:40px 0 80px">
+    <div class="container">
+      <div class="cta-banner reveal">
+        <h2>Ready to Resolve Your Dispute?</h2>
+        <p>Take the first step towards an amicable resolution. Find a mediator or get in touch with us.</p>
+        <a class="btn" onclick="navigateTo('contact')">Request Assistance <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- ═══ PAGE: WHAT IS MEDIATION ═══ -->
+<!-- ═══════════════════════════════════════ -->
+<div class="page" id="page-what-is-mediation">
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">Learn</p>
+      <h1>What is Mediation?</h1>
+      <p>A simple guide to understanding mediation as a dispute resolution method in India.</p>
+    </div>
+  </section>
+  <div class="content-section">
+    <h2>Mediation Explained</h2>
+    <p>Mediation is a structured, voluntary process in which a neutral third party — the mediator — assists disputing parties in reaching a mutually satisfactory resolution. Unlike a judge or arbitrator, the mediator does not decide the outcome. Instead, they guide the conversation, help clarify issues, and encourage constructive dialogue.</p>
+    <p>The process is entirely confidential, meaning nothing discussed during mediation can be used in court. This creates a safe space for honest communication, helping parties explore creative solutions that a courtroom might not offer.</p>
+
+    <h2>Key Features of Mediation</h2>
+    <ul>
+      <li><strong>Voluntary</strong> — Both parties participate willingly and can withdraw at any time.</li>
+      <li><strong>Confidential</strong> — Discussions are private and cannot be disclosed.</li>
+      <li><strong>Neutral Mediator</strong> — The mediator is impartial and does not take sides.</li>
+      <li><strong>Party-Controlled Outcome</strong> — The parties themselves craft the resolution.</li>
+      <li><strong>Flexible</strong> — The process can be adapted to suit the nature of the dispute.</li>
+    </ul>
+
+    <h2>Mediation vs Litigation</h2>
+    <table class="comparison-table">
+      <thead>
+        <tr><th>Aspect</th><th>Mediation</th><th>Litigation (Court)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Timeline</td><td>Weeks to a few months</td><td>Often years</td></tr>
+        <tr><td>Cost</td><td>Significantly lower</td><td>High legal fees</td></tr>
+        <tr><td>Confidentiality</td><td>Fully confidential</td><td>Public record</td></tr>
+        <tr><td>Control</td><td>Parties decide outcome</td><td>Judge decides</td></tr>
+        <tr><td>Relationship</td><td>Preserves relationships</td><td>Often adversarial</td></tr>
+        <tr><td>Enforceability</td><td>Enforceable once signed</td><td>Enforceable via decree</td></tr>
+        <tr><td>Flexibility</td><td>High — tailored process</td><td>Rigid procedural rules</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Legal Framework in India</h2>
+    <p>The <strong>Mediation Act, 2023</strong> provides a comprehensive legal framework for mediation in India. The Act recognises mediation as a legitimate and effective method of dispute resolution and establishes guidelines for the conduct of mediation, qualifications of mediators, and enforceability of settlement agreements.</p>
+    <p>Under this Act, a mediated settlement agreement has the same legal standing as a court decree, making it fully enforceable.</p>
+
+    <div class="info-box">
+      <p><strong>Note:</strong> This website provides general information about mediation. It does not constitute legal advice. For specific legal guidance, please consult a qualified legal professional.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- ═══ PAGE: HOW IT WORKS ═══ -->
+<!-- ═══════════════════════════════════════ -->
+<div class="page" id="page-how-it-works">
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">The Process</p>
+      <h1>How Mediation Works</h1>
+      <p>A detailed walkthrough of the three-step mediation process.</p>
+    </div>
+  </section>
+  <div class="content-section">
+    <div class="detailed-step">
+      <div class="detailed-step-number">1</div>
+      <div>
+        <h3>Agreement to Mediate</h3>
+        <p>The mediation process begins when both parties voluntarily agree to participate. This can happen before a dispute escalates or even after a court case has been filed. Either party — or both together — can approach a mediation centre or a qualified mediator.</p>
+        <p>At this stage, the mediator is selected (either by agreement or through a mediation institution), and basic ground rules are established, including confidentiality, respect, and the commitment to participate in good faith.</p>
+      </div>
+    </div>
+
+    <div class="detailed-step">
+      <div class="detailed-step-number">2</div>
+      <div>
+        <h3>Mediation Sessions</h3>
+        <p>The mediator facilitates structured conversations between the parties. These sessions typically involve opening statements from each side, followed by joint discussions and, where helpful, private sessions (called "caucuses") with each party individually.</p>
+        <p>The mediator helps identify core issues, understand each party's needs and interests, and guide them towards finding common ground. The process is flexible and can be adapted based on the complexity of the dispute.</p>
+        <p>Sessions can take place in person or online, and usually span one to a few sessions depending on the nature of the dispute.</p>
+      </div>
+    </div>
+
+    <div class="detailed-step">
+      <div class="detailed-step-number">3</div>
+      <div>
+        <h3>Settlement Agreement</h3>
+        <p>If the parties reach an agreement, the terms are documented in a written settlement agreement. Both parties review and sign the document. Under the Mediation Act, 2023, this agreement is legally enforceable — similar to a court decree.</p>
+        <p>If mediation does not result in a full agreement, the parties retain their right to pursue other options, including litigation. Nothing discussed during mediation can be used in court.</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <p><strong>Typical Timeline:</strong> Most mediations are completed within 2 to 8 weeks, depending on the complexity of the dispute and availability of the parties. This is significantly faster than the average court timeline in India.</p>
+    </div>
+
+    <div class="info-box" style="margin-top:16px">
+      <p><strong>Confidentiality Assurance:</strong> Everything discussed during mediation is strictly confidential. The mediator cannot be called as a witness in any subsequent proceedings, and no mediation communication can be disclosed without the consent of all parties.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- ═══ PAGE: FAQs ═══ -->
+<!-- ═══════════════════════════════════════ -->
+<div class="page" id="page-faqs">
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">Common Questions</p>
+      <h1>Frequently Asked Questions</h1>
+      <p>Clear, concise answers to common questions about mediation.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Is mediation legally binding?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes. Once a settlement agreement is signed by both parties, it becomes legally enforceable under the Mediation Act, 2023. It holds the same weight as a court decree and can be enforced through the courts if necessary.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Is mediation confidential?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes. All discussions during mediation are strictly confidential. Nothing said during the process can be disclosed or used as evidence in court proceedings. This creates a safe environment for open and honest communication.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Can I bring a lawyer to mediation?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes. Parties are welcome to bring legal counsel to mediation sessions. A lawyer can provide guidance, help you understand your rights, and assist in reviewing the settlement agreement before signing.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What if mediation fails?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">If mediation does not result in a resolution, you retain all your legal rights and may still approach the court. Nothing discussed during mediation can be used against you in subsequent proceedings.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How long does mediation take?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Most mediations are completed within a few weeks to a couple of months. The Mediation Act, 2023 provides for a timeline of 120 days (extendable by 60 days). This is significantly faster than the typical court timeline in India.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            Who can be a mediator?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">A mediator is a trained professional who is neutral and impartial. Under the Mediation Act, 2023, mediators must meet prescribed qualifications and be registered with a recognised mediation service provider or institution.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            What types of disputes can be mediated?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">A wide range of civil and commercial disputes can be mediated, including family matters (divorce, custody, inheritance), property disputes, workplace conflicts, business disagreements, consumer complaints, and neighbourhood issues. Criminal matters and disputes involving public interest are generally not mediated.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            How much does mediation cost?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer"><div class="faq-answer-inner">Mediation is significantly more affordable than litigation. Court-annexed mediation centres often offer mediation at no cost or very nominal fees. Private mediators may charge fees based on the complexity of the dispute, but these are still a fraction of typical litigation costs.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- ═══ PAGE: RESOURCES ═══ -->
+<!-- ═══════════════════════════════════════ -->
+<div class="page" id="page-resources">
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">Library</p>
+      <h1>Resources</h1>
+      <p>Downloadable guides, templates and reference materials to help you prepare for mediation.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:12px">
+        <p class="section-label">Downloadable Guides</p>
+        <h2 class="section-title">Helpful Documents</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card">
+          <div class="resource-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div>
+            <h3>What is Mediation?</h3>
+            <p>One-page summary explaining mediation in simple terms.</p>
+            <span class="resource-tag">PDF</span>
+          </div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div>
+            <h3>How to Prepare for Mediation</h3>
+            <p>A practical guide on what to bring and how to prepare.</p>
+            <span class="resource-tag">PDF</span>
+          </div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div>
+            <h3>Mediation vs Court Comparison</h3>
+            <p>Side-by-side comparison to help you decide the right approach.</p>
+            <span class="resource-tag">PDF</span>
+          </div>
+        </div>
+        <div class="resource-card">
+          <div class="resource-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div>
+            <h3>Sample Mediation Agreement</h3>
+            <p>A template settlement agreement for reference.</p>
+            <span class="resource-tag">PDF</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:64px;margin-bottom:12px">
+        <p class="section-label">Legal Reference</p>
+        <h2 class="section-title">Mediation Act, 2023</h2>
+        <p class="section-subtitle" style="margin:0 auto">The full text of the Mediation Act, 2023, available in multiple languages.</p>
+      </div>
+      <div class="resources-grid" style="max-width:600px;margin-left:auto;margin-right:auto;margin-top:32px">
+        <div class="resource-card">
+          <div class="resource-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          </div>
+          <div>
+            <h3>Mediation & Conciliation Act, 2023</h3>
+            <p>Official government publication of the full Act.</p>
+            <div class="lang-badges">
+              <span class="lang-badge">English</span>
+              <span class="lang-badge">Hindi</span>
+              <span class="lang-badge">Marathi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- ═══ PAGE: FIND A MEDIATOR ═══ -->
+<!-- ═══════════════════════════════════════ -->
+<div class="page" id="page-find-mediator">
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">Get Help</p>
+      <h1>Find a Mediator</h1>
+      <p>Locate a mediation centre near you or reach out directly for assistance.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="finder-grid">
+        <div class="finder-card">
+          <h3>🏛️ Local Mediation Centres</h3>
+          <p>You can access mediation services through several established channels across India:</p>
+          <ul style="list-style:none;margin-top:16px">
+            <li style="padding:8px 0 8px 28px;position:relative;color:var(--text-secondary);font-size:0.92rem"><span style="position:absolute;left:0;top:16px;width:8px;height:8px;background:var(--blue-400);border-radius:50%;display:block"></span><strong>District Court Mediation Centre</strong> — Visit the mediation cell at your nearest District Court.</li>
+            <li style="padding:8px 0 8px 28px;position:relative;color:var(--text-secondary);font-size:0.92rem"><span style="position:absolute;left:0;top:16px;width:8px;height:8px;background:var(--blue-400);border-radius:50%;display:block"></span><strong>State Legal Services Authority</strong> — Contact your State or District Legal Services Authority for free or subsidised mediation.</li>
+            <li style="padding:8px 0 8px 28px;position:relative;color:var(--text-secondary);font-size:0.92rem"><span style="position:absolute;left:0;top:16px;width:8px;height:8px;background:var(--blue-400);border-radius:50%;display:block"></span><strong>Local Bar Association</strong> — Many Bar Associations have mediation panels with trained advocates.</li>
+            <li style="padding:8px 0 8px 28px;position:relative;color:var(--text-secondary);font-size:0.92rem"><span style="position:absolute;left:0;top:16px;width:8px;height:8px;background:var(--blue-400);border-radius:50%;display:block"></span><strong>Law College Mediation Cells</strong> — Some law schools run community mediation clinics.</li>
+          </ul>
+        </div>
+
+        <div class="finder-card">
+          <h3>✉️ Contact Templates</h3>
+          <p>Use these ready-made templates to reach out:</p>
+          <p style="font-weight:600;margin-top:20px;margin-bottom:4px;font-size:0.88rem;color:var(--text-primary)">Email Template</p>
+          <div class="template-block">Subject: Request for Mediation Assistance
+
+Dear Sir/Madam,
+
+I am seeking mediation for a dispute relating to [brief description of dispute].
+
+Kindly guide me on the process, fees involved, and appointment of a mediator.
+
+Thank you for your assistance.
+
+Sincerely,
+[Your Name]
+[Your Contact Number]</div>
+
+          <p style="font-weight:600;margin-top:24px;margin-bottom:4px;font-size:0.88rem;color:var(--text-primary)">Phone Script</p>
+          <div class="template-block">Hello, my name is [Your Name].
+
+I am looking for mediation services regarding a [type of dispute] matter.
+
+Could you please guide me on the process and how to schedule a session?</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- ═══ PAGE: CONTACT ═══ -->
+<!-- ═══════════════════════════════════════ -->
+<div class="page" id="page-contact">
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">Get in Touch</p>
+      <h1>Contact & Feedback</h1>
+      <p>Have a question or need guidance? We're here to help.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number (optional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
+            </div>
+            <div class="form-group">
+              <label for="disputeType">Type of Dispute</label>
+              <select id="disputeType" name="disputeType">
+                <option value="" disabled selected>Select dispute type</option>
+                <option value="family">Family (Divorce, Custody, Inheritance)</option>
+                <option value="property">Property / Neighbour Dispute</option>
+                <option value="workplace">Workplace / Employment</option>
+                <option value="business">Business / Commercial</option>
+                <option value="consumer">Consumer Complaint</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message *</label>
+              <textarea id="message" name="message" required placeholder="Briefly describe your situation and how we can help..."></textarea>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" id="consent" required>
+              <label for="consent">I agree to be contacted regarding my inquiry. My information will be handled confidentially.</label>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Request Assistance <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></button>
+            <p class="privacy-note">Your personal information is kept strictly confidential and will only be used to respond to your inquiry. We do not share your data with third parties.</p>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <h3>Thank You!</h3>
+            <p>Your message has been received. We will get back to you shortly.</p>
+          </div>
+        </div>
+        <div class="contact-info-card">
+          <h3>Other Ways to Reach Us</h3>
+          <div class="contact-detail">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <p><strong>Email</strong>contact@mediationindia.org</p>
+          </div>
+          <div class="contact-detail">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <p><strong>Phone</strong>+91 (placeholder) XXX-XXXX</p>
+          </div>
+          <div class="contact-detail">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <p><strong>Office</strong>[City], India<br>(Address placeholder)</p>
+          </div>
+          <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border-light)">
+            <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.6">We typically respond within 1–2 business days. For urgent matters, please call directly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══ FOOTER (all pages) ═══ -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="nav-brand" onclick="navigateTo('home')" style="display:inline-flex">
+          <svg viewBox="0 0 32 32" fill="none" width="28" height="28"><circle cx="16" cy="16" r="15" stroke="rgba(255,255,255,0.5)" stroke-width="2"/><path d="M10 20 C10 14, 16 10, 16 10 C16 10, 22 14, 22 20" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="16" cy="12" r="2" fill="rgba(255,255,255,0.5)"/><path d="M12 18h8" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span class="nav-brand-text" style="color:rgba(255,255,255,0.9)">Mediation India</span>
+        </a>
+        <p>Promoting amicable dispute resolution through mediation across India. Educating citizens and empowering communities.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a onclick="navigateTo('home')">Home</a></li>
+          <li><a onclick="navigateTo('what-is-mediation')">What is Mediation</a></li>
+          <li><a onclick="navigateTo('how-it-works')">How It Works</a></li>
+          <li><a onclick="navigateTo('faqs')">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a onclick="navigateTo('resources')">Downloads</a></li>
+          <li><a onclick="navigateTo('find-mediator')">Find a Mediator</a></li>
+          <li><a onclick="navigateTo('contact')">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Mediation India. All rights reserved.</span>
+      <span style="max-width:480px;text-align:right">⚖️ This website provides general information about mediation. It does not constitute legal advice.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
