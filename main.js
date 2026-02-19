@@ -153,5 +153,79 @@ function downloadMediationActMarathiSummary() {
   doc.save('Mediation-Act-2023-Marathi-Summary.pdf');
 }
 
+// ─── CITY SEARCH (FIND A MEDIATOR) ───
+function initCitySearch() {
+  const input = document.getElementById('citySearch');
+  const resultsEl = document.getElementById('cityResults');
+  const resultsContainer = document.getElementById('cityMediationResults');
+  const titleEl = document.getElementById('cityResultsTitle');
+  const cardsEl = document.getElementById('centreCards');
+
+  if (!input || !window.MEDIATION_CENTRES) return;
+
+  const cities = window.MEDIATION_CENTRES.cities || [];
+
+  function filterCities(q) {
+    const qq = (q || '').trim().toLowerCase();
+    if (!qq) return cities.slice(0, 20);
+    return cities.filter(c => c.name.toLowerCase().includes(qq)).slice(0, 20);
+  }
+
+  function renderDropdown(items) {
+    if (!items.length) {
+      resultsEl.innerHTML = '<div class="city-result-item city-result-empty">No city found</div>';
+      resultsEl.hidden = false;
+      return;
+    }
+    resultsEl.innerHTML = items.map(c => `<div class="city-result-item" role="option" data-city="${c.name}" tabindex="0">${c.name}, ${c.state}</div>`).join('');
+    resultsEl.hidden = false;
+  }
+
+  function selectCity(cityData) {
+    input.value = cityData.name + ', ' + cityData.state;
+    resultsEl.hidden = true;
+
+    titleEl.textContent = `Mediation Centres in ${cityData.name}`;
+    cardsEl.innerHTML = cityData.centres.map(c => `
+      <div class="centre-card centre-card--${c.type}">
+        <span class="centre-type">${c.type === 'government' ? 'Government' : 'Private'}</span>
+        <h4>${c.name}</h4>
+        <p class="centre-address">${c.address}</p>
+        ${c.phone ? `<p class="centre-contact"><strong>Phone:</strong> ${c.phone}</p>` : ''}
+        ${c.email ? `<p class="centre-contact"><strong>Email:</strong> <a href="mailto:${c.email}">${c.email}</a></p>` : ''}
+      </div>
+    `).join('');
+
+    resultsContainer.hidden = false;
+    resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  input.addEventListener('input', function() {
+    renderDropdown(filterCities(input.value));
+  });
+
+  input.addEventListener('focus', function() {
+    renderDropdown(filterCities(input.value));
+  });
+
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') resultsEl.hidden = true;
+  });
+
+  resultsEl.addEventListener('click', function(e) {
+    const item = e.target.closest('.city-result-item[data-city]');
+    if (item) {
+      const cityName = item.getAttribute('data-city');
+      const cityData = cities.find(c => c.name === cityName);
+      if (cityData) selectCity(cityData);
+    }
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.city-search-wrapper')) resultsEl.hidden = true;
+  });
+}
+
 // Init
 observeReveals();
+if (document.getElementById('citySearch')) initCitySearch();

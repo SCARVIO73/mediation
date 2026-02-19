@@ -413,7 +413,21 @@
   </section>
   <section class="section">
     <div class="container">
-      <div class="finder-grid">
+      <div class="city-search-section">
+        <p class="section-label">Search by City</p>
+        <h2 class="section-title">Select Your City</h2>
+        <p class="section-subtitle" style="margin:0 auto 24px">Choose from 100+ cities across India to find government and private mediation centres.</p>
+        <div class="city-search-wrapper">
+          <input type="text" id="citySearch" class="city-search-input" placeholder="Type to search city (e.g. Delhi, Mumbai, Bangalore)..." autocomplete="off" aria-label="Search city">
+          <div id="cityResults" class="city-results" role="listbox" aria-label="City results" hidden></div>
+        </div>
+        <p class="city-search-hint">Verify latest contact details at <a href="https://nalsa.gov.in/directory/" target="_blank" rel="noopener">nalsa.gov.in/directory</a></p>
+      </div>
+      <div id="cityMediationResults" class="city-mediation-results" hidden>
+        <h3 class="city-results-title" id="cityResultsTitle"></h3>
+        <div id="centreCards" class="centre-cards"></div>
+      </div>
+      <div class="finder-grid" style="margin-top:64px">
         <div class="finder-card">
           <h3>🏛️ Local Mediation Centres</h3>
           <p>You can access mediation services through several established channels across India:</p>
@@ -580,6 +594,7 @@ Could you please guide me on the process and how to schedule a session?</div>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="mediation-centres-data.js"></script>
 <script src="main.js"></script>
 </body>
 </html>

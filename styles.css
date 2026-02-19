@@ -685,6 +685,126 @@ body {
   line-height: 1.7;
 }
 
+/* ─── CITY SEARCH (FIND A MEDIATOR) ─── */
+.city-search-section {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.city-search-wrapper {
+  position: relative;
+  max-width: 520px;
+  margin: 0 auto 8px;
+}
+.city-search-input {
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  color: var(--text-primary);
+  transition: var(--transition);
+  outline: none;
+}
+.city-search-input:focus {
+  border-color: var(--blue-400);
+  box-shadow: 0 0 0 4px rgba(37,99,168,0.1);
+}
+.city-search-input::placeholder { color: var(--text-muted); }
+.city-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  max-height: 320px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  z-index: 50;
+}
+.city-result-item {
+  padding: 14px 24px;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: var(--transition);
+  border-bottom: 1px solid var(--border-light);
+}
+.city-result-item:last-child { border-bottom: none; }
+.city-result-item:hover,
+.city-result-item:focus {
+  background: var(--blue-50);
+  color: var(--blue-700);
+  outline: none;
+}
+.city-result-empty { color: var(--text-muted); cursor: default; }
+.city-search-hint {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.city-search-hint a { color: var(--blue-500); }
+.city-mediation-results { margin-top: 40px; }
+.city-results-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+.centre-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.centre-card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: var(--transition);
+}
+.centre-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--blue-200);
+}
+.centre-card--government { border-left: 4px solid var(--blue-500); }
+.centre-card--private { border-left: 4px solid var(--blue-300); }
+.centre-type {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--blue-600);
+  background: var(--blue-50);
+  padding: 4px 10px;
+  border-radius: 50px;
+  margin-bottom: 12px;
+}
+.centre-card h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+.centre-address {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.centre-contact {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 4px 0;
+}
+.centre-contact a { color: var(--blue-600); }
+
 /* ─── FIND A MEDIATOR ─── */
 .finder-grid {
   display: grid;
