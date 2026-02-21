@@ -851,8 +851,8 @@ body {
   text-align: center;
   margin-bottom: 40px;
 }
-.resources-section-header .section-subtitle {
-  margin: 0 auto;
+.resources-section-title {
+  font-family: var(--font-body);
 }
 .resources-grid {
   display: grid;
@@ -875,6 +875,7 @@ body {
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
   padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
   display: flex;
   align-items: flex-start;
   gap: 16px;
@@ -919,6 +920,11 @@ body {
 .resource-card p {
   font-size: 0.85rem;
   color: var(--text-muted);
+  margin-bottom: 10px;
+}
+.resource-card .resource-tag {
+  display: inline-block;
+  margin-top: 4px;
 }
 .resource-meta {
   display: flex;
@@ -949,6 +955,11 @@ body {
   gap: 10px;
   flex-wrap: wrap;
   margin-top: 12px;
+}
+.resource-actions--block {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-light);
 }
 .resource-action {
   display: inline-flex;
