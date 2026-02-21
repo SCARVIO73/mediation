@@ -153,10 +153,19 @@ function downloadMediationActMarathiSummary() {
   doc.save('Mediation-Act-2023-Marathi-Summary.pdf');
 }
 
-// ─── CITY SEARCH (FIND A MEDIATOR) ───
+// ─── CITY SEARCH (FIND A MEDIATOR) ─── BookMyShow-style
+const POPULAR_CITIES = [
+  'Delhi', 'Mumbai', 'Bangalore', 'Chennai', 'Hyderabad', 'Kolkata',
+  'Ahmedabad', 'Pune', 'Chandigarh', 'Jaipur', 'Kochi', 'Lucknow'
+];
+
 function initCitySearch() {
   const input = document.getElementById('citySearch');
-  const resultsEl = document.getElementById('cityResults');
+  const popularEl = document.getElementById('popularCities');
+  const otherWrapper = document.getElementById('cityOtherWrapper');
+  const otherListEl = document.getElementById('cityOtherList');
+  const toggleBtn = document.getElementById('cityToggleBtn');
+  const detectBtn = document.getElementById('cityDetectBtn');
   const resultsContainer = document.getElementById('cityMediationResults');
   const titleEl = document.getElementById('cityResultsTitle');
   const cardsEl = document.getElementById('centreCards');
@@ -165,26 +174,7 @@ function initCitySearch() {
 
   const cities = window.MEDIATION_CENTRES.cities || [];
 
-  function filterCities(q) {
-    const qq = (q || '').trim().toLowerCase();
-    if (!qq) return cities.slice(0, 20);
-    return cities.filter(c => c.name.toLowerCase().includes(qq)).slice(0, 20);
-  }
-
-  function renderDropdown(items) {
-    if (!items.length) {
-      resultsEl.innerHTML = '<div class="city-result-item city-result-empty">No city found</div>';
-      resultsEl.hidden = false;
-      return;
-    }
-    resultsEl.innerHTML = items.map(c => `<div class="city-result-item" role="option" data-city="${c.name}" tabindex="0">${c.name}, ${c.state}</div>`).join('');
-    resultsEl.hidden = false;
-  }
-
   function selectCity(cityData) {
-    input.value = cityData.name + ', ' + cityData.state;
-    resultsEl.hidden = true;
-
     titleEl.textContent = `Mediation Centres in ${cityData.name}`;
     cardsEl.innerHTML = cityData.centres.map(c => `
       <div class="centre-card centre-card--${c.type}">
@@ -197,33 +187,158 @@ function initCitySearch() {
     `).join('');
 
     resultsContainer.hidden = false;
-    resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    input.value = '';
+    resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    if (toggleBtn && otherWrapper && otherWrapper.hidden === false) {
+      otherWrapper.hidden = true;
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.querySelector('.city-toggle-text').textContent = 'Show all cities';
+      toggleBtn.querySelector('.city-toggle-icon').style.transform = 'rotate(0deg)';
+    }
+  }
+
+  function renderPopularCities() {
+    const popular = POPULAR_CITIES
+      .map(name => cities.find(c => c.name === name))
+      .filter(Boolean);
+    if (!popularEl) return;
+    popularEl.innerHTML = popular.map(c => `
+      <button type="button" class="city-chip" data-city="${c.name}" aria-label="Select ${c.name}">
+        <span class="city-chip-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <span class="city-chip-name">${c.name}</span>
+      </button>
+    `).join('');
+  }
+
+  function getCitiesByLetter() {
+    const sorted = [...cities].sort((a, b) => a.name.localeCompare(b.name));
+    const byLetter = {};
+    sorted.forEach(c => {
+      const letter = c.name.charAt(0).toUpperCase();
+      if (!byLetter[letter]) byLetter[letter] = [];
+      byLetter[letter].push(c);
+    });
+    return byLetter;
+  }
+
+  function renderOtherCities(filter) {
+    const q = (filter || '').trim().toLowerCase();
+    let toShow = cities;
+    if (q) {
+      toShow = cities.filter(c =>
+        c.name.toLowerCase().includes(q) ||
+        c.state.toLowerCase().includes(q)
+      );
+    }
+    const sorted = [...toShow].sort((a, b) => a.name.localeCompare(b.name));
+    const byLetter = {};
+    sorted.forEach(c => {
+      const letter = c.name.charAt(0).toUpperCase();
+      if (!byLetter[letter]) byLetter[letter] = [];
+      byLetter[letter].push(c);
+    });
+
+    const html = Object.keys(byLetter)
+      .sort()
+      .map(letter => `
+        <div class="city-letter-group">
+          <div class="city-letter-heading">${letter}</div>
+          <div class="city-letter-cities">
+            ${byLetter[letter].map(c => `<button type="button" class="city-other-item" data-city="${c.name}">${c.name}</button>`).join('')}
+          </div>
+        </div>
+      `).join('');
+
+    if (otherListEl) otherListEl.innerHTML = html || '<p class="city-no-results">No cities match your search.</p>';
+  }
+
+  function toggleOtherCities() {
+    if (!otherWrapper || !toggleBtn) return;
+    const isOpen = !otherWrapper.hidden;
+    otherWrapper.hidden = isOpen;
+    toggleBtn.setAttribute('aria-expanded', !isOpen);
+    toggleBtn.querySelector('.city-toggle-text').textContent = isOpen ? 'Show all cities' : 'Hide all cities';
+    toggleBtn.querySelector('.city-toggle-icon').style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+  }
+
+  renderPopularCities();
+  renderOtherCities();
+
+  if (popularEl) {
+    popularEl.addEventListener('click', (e) => {
+      const chip = e.target.closest('.city-chip[data-city]');
+      if (chip) {
+        const cityData = cities.find(c => c.name === chip.getAttribute('data-city'));
+        if (cityData) selectCity(cityData);
+      }
+    });
+  }
+
+  if (otherListEl) {
+    otherListEl.addEventListener('click', (e) => {
+      const btn = e.target.closest('.city-other-item[data-city]');
+      if (btn) {
+        const cityData = cities.find(c => c.name === btn.getAttribute('data-city'));
+        if (cityData) selectCity(cityData);
+      }
+    });
   }
 
   input.addEventListener('input', function() {
-    renderDropdown(filterCities(input.value));
-  });
-
-  input.addEventListener('focus', function() {
-    renderDropdown(filterCities(input.value));
-  });
-
-  input.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') resultsEl.hidden = true;
-  });
-
-  resultsEl.addEventListener('click', function(e) {
-    const item = e.target.closest('.city-result-item[data-city]');
-    if (item) {
-      const cityName = item.getAttribute('data-city');
-      const cityData = cities.find(c => c.name === cityName);
-      if (cityData) selectCity(cityData);
+    renderOtherCities(input.value);
+    if (otherWrapper && !otherWrapper.hidden) return;
+    if (input.value.trim()) {
+      otherWrapper.hidden = false;
+      if (toggleBtn) {
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        toggleBtn.querySelector('.city-toggle-text').textContent = 'Hide all cities';
+        toggleBtn.querySelector('.city-toggle-icon').style.transform = 'rotate(180deg)';
+      }
     }
   });
 
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.city-search-wrapper')) resultsEl.hidden = true;
-  });
+  if (toggleBtn) toggleBtn.addEventListener('click', toggleOtherCities);
+
+  if (detectBtn) {
+    detectBtn.addEventListener('click', function() {
+      if (!navigator.geolocation) {
+        alert('Location is not supported by your browser.');
+        return;
+      }
+      detectBtn.disabled = true;
+      detectBtn.classList.add('city-detect-btn--loading');
+      navigator.geolocation.getCurrentPosition(
+        function(pos) {
+          detectBtn.disabled = false;
+          detectBtn.classList.remove('city-detect-btn--loading');
+          const lat = pos.coords.latitude;
+          const lng = pos.coords.longitude;
+          fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`)
+            .then(r => r.json())
+            .then(data => {
+              const city = data.address?.city || data.address?.town || data.address?.district || data.address?.state_district;
+              if (city) {
+                const cityData = cities.find(c => c.name.toLowerCase() === city.toLowerCase()) ||
+                  cities.find(c => c.name.toLowerCase().includes(city.toLowerCase()) || city.toLowerCase().includes(c.name.toLowerCase()));
+                if (cityData) selectCity(cityData);
+                else { input.value = city; renderOtherCities(city); otherWrapper.hidden = false; }
+              }
+            })
+            .catch(() => {
+              detectBtn.disabled = false;
+              detectBtn.classList.remove('city-detect-btn--loading');
+            });
+        },
+        function() {
+          detectBtn.disabled = false;
+          detectBtn.classList.remove('city-detect-btn--loading');
+        }
+      );
+    });
+  }
 }
 
 // Init
