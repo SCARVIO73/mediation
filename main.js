@@ -50,11 +50,58 @@ function toggleFaq(btn) {
   }
 }
 
-// ─── CONTACT FORM ───
+// ─── CONTACT FORM (silent submit to Google Form) ───
 function handleSubmit(e) {
   e.preventDefault();
-  document.getElementById('contactForm').style.display = 'none';
+
+  const config = window.GOOGLE_FORM_CONFIG;
+  if (!config || !config.entries || config.entries.fullName === 'entry.XXXXXXXX') {
+    alert('Form is not yet configured. Please add your Google Form entry IDs in form-config.js. See the file for instructions.');
+    return;
+  }
+
+  const form = document.getElementById('contactForm');
+  const name = (document.getElementById('name') || {}).value || '';
+  const email = (document.getElementById('email') || {}).value || '';
+  const phone = (document.getElementById('phone') || {}).value || '';
+  const disputeSelect = document.getElementById('disputeType');
+  const disputeText = disputeSelect && disputeSelect.options[disputeSelect.selectedIndex] ? disputeSelect.options[disputeSelect.selectedIndex].text : '';
+  const message = (document.getElementById('message') || {}).value || '';
+  const consent = (document.getElementById('consent') || {}).checked ? 'Yes' : '';
+
+  const entries = config.entries;
+  const action = config.formResponseUrl;
+
+  const hiddenForm = document.createElement('form');
+  hiddenForm.method = 'POST';
+  hiddenForm.action = action;
+  hiddenForm.target = 'googleFormFrame';
+  hiddenForm.style.display = 'none';
+
+  [
+    [entries.fullName, name],
+    [entries.email, email],
+    [entries.phone, phone],
+    [entries.disputeType, disputeText],
+    [entries.message, message],
+    [entries.consent, consent]
+  ].forEach(function(pair) {
+    if (pair[0] && pair[0] !== 'entry.XXXXXXXX') {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = pair[0];
+      input.value = pair[1] || '';
+      hiddenForm.appendChild(input);
+    }
+  });
+
+  document.body.appendChild(hiddenForm);
+  hiddenForm.submit();
+  document.body.removeChild(hiddenForm);
+
+  form.style.display = 'none';
   document.getElementById('formSuccess').classList.add('show');
+  form.reset();
 }
 
 // ─── SCROLL REVEAL ───

@@ -1186,6 +1186,8 @@ body {
 .contact-detail svg { flex-shrink: 0; margin-top: 2px; color: var(--blue-500); }
 .contact-detail p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; }
 .contact-detail strong { color: var(--text-primary); display: block; margin-bottom: 2px; }
+.contact-detail a { color: var(--blue-600); text-decoration: none; }
+.contact-detail a:hover { text-decoration: underline; }
 .privacy-note {
   font-size: 0.82rem;
   color: var(--text-muted);
