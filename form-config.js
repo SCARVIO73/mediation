@@ -12,11 +12,11 @@
 window.GOOGLE_FORM_CONFIG = {
   formResponseUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSdLFuKtdFJ7UIXDoHMLrbwSzgpU2J9E72575MURMB0siI5W3g/formResponse',
   entries: {
-    fullName: 'entry.XXXXXXXX',   // Full Name *
-    email: 'entry.XXXXXXXX',     // Email Address *
-    phone: 'entry.XXXXXXXX',     // Phone Number (Optional)
-    disputeType: 'entry.XXXXXXXX', // Type of Dispute *
-    message: 'entry.XXXXXXXX',   // Your Message *
-    consent: 'entry.XXXXXXXX'    // Consent Checkbox *
+    fullName: 'entry.2005620554',   // Full Name *
+    email: 'entry.1045781291',      // Email Address *
+    phone: 'entry.1166974658',      // Phone Number (Optional)
+    disputeType: 'entry.839337160', // Type of Dispute *
+    message: 'entry.1633651624',    // Your Message *
+    consent: 'entry.1941233845'     // Consent Checkbox *
   }
 };

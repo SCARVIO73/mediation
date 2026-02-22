@@ -67,7 +67,7 @@ function handleSubmit(e) {
   const disputeSelect = document.getElementById('disputeType');
   const disputeText = disputeSelect && disputeSelect.options[disputeSelect.selectedIndex] ? disputeSelect.options[disputeSelect.selectedIndex].text : '';
   const message = (document.getElementById('message') || {}).value || '';
-  const consent = (document.getElementById('consent') || {}).checked ? 'Yes' : '';
+  const consent = (document.getElementById('consent') || {}).checked ? 'I agree to be contacted regarding my inquiry. My information will be handled confidentially.' : '';
 
   const entries = config.entries;
   const action = config.formResponseUrl;
